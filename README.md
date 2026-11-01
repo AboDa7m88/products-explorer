@@ -1,59 +1,128 @@
-# ProductExplorer
+# 🛍️ Product Explorer
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.19.
+A modern and responsive product browsing application built with Angular, designed to provide users with a simple and intuitive way to discover products, explore product details, and save their favorite items.
 
-## Development server
+The application uses the DummyJSON Products API to retrieve real product data, offering a practical shopping experience without requiring a backend or database.
 
-To start a local development server, run:
+> 🚧 **Project Status: In Progress**
+>
+> Product Explorer is currently under development. New features, UI improvements, and performance enhancements will be introduced as the project evolves.
 
-```bash
-ng serve
+## ✨ Features
+
+The application is planned to include the following features:
+
+- **Product Browsing:** Explore products with images, prices, and ratings.
+- **Search:** Find products quickly by name.
+- **Category Filtering:** Browse products by category.
+- **Pagination:** Navigate through product listings efficiently.
+- **Product Details:** View detailed product information and images.
+- **Favorites:** Save favorite products and access them later.
+- **Persistent Storage:** Keep favorite products saved using browser local storage.
+- **Responsive Design:** Enjoy a consistent experience across desktop and mobile devices.
+- **Loading & Error States:** Clear feedback while data loads or when a request fails.
+
+*Features will be implemented progressively throughout development.*
+
+## 🛠️ Tech Stack
+
+- **Angular** — Frontend framework.
+- **TypeScript** — Application logic and type safety.
+- **Bootstrap** — Responsive layout and UI styling.
+- **RxJS** — Asynchronous operations and reactive data handling.
+- **Angular Router** — Navigation between application pages.
+- **DummyJSON API** — Product data source.
+- **LocalStorage** — Persistent storage for favorite products.
+
+## 🌐 API
+
+Product data is provided by the [DummyJSON Products API](https://dummyjson.com/docs/products).
+
+No API key, custom backend, or database is required.
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+Make sure you have the following installed:
+
+- Node.js
+- npm
+- Angular CLI
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone <repository-url>
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd product-explorer
+   ```
+
+3. Install the dependencies:
+
+   ```bash
+   npm install
+   ```
+
+4. Start the development server:
+
+   ```bash
+   ng serve -o
+   ```
+
+5. Open the local development URL displayed in your terminal if the browser does not open automatically.
+
+## 📱 Responsive Design
+
+Product Explorer is being developed with responsive layouts in mind, providing:
+
+- A four-column product grid on desktop screens.
+- A two-column product grid on mobile screens.
+- Responsive navigation and product details layouts.
+
+The layouts will be tested and refined throughout development.
+
+## 📂 Project Structure
+
+The application will follow a modular Angular architecture, separating pages, reusable components, services, and data models.
+
+```text
+src/
+└── app/
+    ├── components/
+    ├── pages/
+    ├── services/
+    ├── models/
+    ├── app.routes.ts
+    └── app.config.ts
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+The structure may evolve as the application grows.
 
-## Code scaffolding
+## 🔮 Future Improvements
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Potential enhancements include:
 
-```bash
-ng generate component component-name
-```
+- Product sorting by price and rating.
+- Shopping cart functionality.
+- Dark mode with saved preferences.
+- Unit testing.
+- Deployment to a public hosting platform.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Additional improvements will be considered after the core functionality is complete.
 
-```bash
-ng generate --help
-```
+## 👨‍💻 Development Notes
 
-## Building
+This project is being developed as a practical Angular application to strengthen frontend development skills and apply concepts such as component-based architecture, API integration, routing, reactive programming, and state management.
 
-To build the project run:
+The codebase and documentation will continue to evolve as development progresses.
 
-```bash
-ng build
-```
+## 📄 License
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+This project is currently intended for learning and portfolio purposes.
