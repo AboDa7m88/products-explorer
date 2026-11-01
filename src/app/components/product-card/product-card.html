@@ -1,0 +1,19 @@
+<div class="card product-card position-relative h-100">
+  <a class="text-decoration-none text-reset" [routerLink]="['/products', product.id]">
+    <div class="thumb-wrapper">
+      <img [src]="product.thumbnail" [alt]="product.title" loading="lazy" />
+    </div>
+
+    <div class="p-2">
+      <h3 class="title">{{ product.title }}</h3>
+      <div class="d-flex justify-content-between align-items-center">
+        <span class="price">{{ product.price | currency: 'USD' : 'symbol' : '1.0-2' }}</span>
+        <span class="rating">★ {{ product.rating }}</span>
+      </div>
+    </div>
+  </a>
+
+  <div class="fav-position">
+    <app-favorite-button [active]="isFavorite" (toggle)="favoriteToggle.emit(product)" />
+  </div>
+</div>

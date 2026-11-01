@@ -1,0 +1,21 @@
+<div class="d-flex justify-content-center align-items-center gap-3 py-3">
+  <button
+    type="button"
+    class="btn btn-outline-secondary btn-sm"
+    [disabled]="isFirst"
+    (click)="go(page - 1)"
+  >
+    ← <span class="d-none d-sm-inline">Previous</span>
+  </button>
+
+  <span class="small text-secondary">Page {{ page }} of {{ totalPages }}</span>
+
+  <button
+    type="button"
+    class="btn btn-primary btn-sm"
+    [disabled]="isLast"
+    (click)="go(page + 1)"
+  >
+    <span class="d-none d-sm-inline">Next</span> →
+  </button>
+</div>
