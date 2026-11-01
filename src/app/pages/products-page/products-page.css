@@ -1,0 +1,4 @@
+:host {
+  display: block;
+  animation: page-in 0.35s ease-out;
+}

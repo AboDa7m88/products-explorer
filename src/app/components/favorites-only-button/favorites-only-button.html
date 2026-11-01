@@ -1,0 +1,10 @@
+<button
+  type="button"
+  class="btn w-100"
+  [class.btn-danger]="active"
+  [class.btn-outline-secondary]="!active"
+  (click)="toggle.emit()"
+>
+  {{ active ? '♥' : '♡' }}
+  <span class="d-none d-md-inline">Favorites only</span>
+</button>

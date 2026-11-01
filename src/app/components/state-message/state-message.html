@@ -1,0 +1,20 @@
+<div class="text-center py-5">
+  <div class="display-4">{{ icon }}</div>
+  <h2 class="h6 fw-bold mt-2">{{ title }}</h2>
+
+  @if (message) {
+    <p class="text-secondary small">{{ message }}</p>
+  }
+
+  @if (buttonLabel) {
+    <button
+      type="button"
+      class="btn btn-sm"
+      [class.btn-primary]="!outline"
+      [class.btn-outline-secondary]="outline"
+      (click)="action.emit()"
+    >
+      {{ buttonLabel }}
+    </button>
+  }
+</div>

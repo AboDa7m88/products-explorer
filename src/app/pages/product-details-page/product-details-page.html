@@ -1,0 +1,48 @@
+<div class="container py-3">
+  <a routerLink="/" class="back-link">
+    <span class="arrow">←</span>
+    Back to products
+  </a>
+
+  @if (product(); as p) {
+  <div class="card border-0 shadow-sm mt-3 p-3 p-md-4">
+    <div class="row g-4">
+      <div class="col-12 col-md-5">
+        <app-product-gallery [images]="p.images" [title]="p.title" />
+      </div>
+
+      <div class="col-12 col-md-7">
+        <div class="text-uppercase text-secondary small">
+          {{ p.category }}@if (p.brand) { · {{ p.brand }} }
+        </div>
+        <h1 class="h3 fw-bold">{{ p.title }}</h1>
+        <div class="text-warning">★ <span class="text-dark small">{{ p.rating }}</span></div>
+
+        <div class="d-flex align-items-center gap-2 my-2">
+          <span class="fs-3 fw-bold text-primary">{{ p.price | currency: 'USD' : 'symbol' : '1.0-2' }}</span>
+          <span class="badge text-bg-success-subtle text-success">-{{ p.discountPercentage }}%</span>
+        </div>
+
+        <p class="text-secondary">{{ p.description }}</p>
+
+        <dl class="row small">
+          @if (p.brand) {
+          <dt class="col-4 text-secondary fw-normal">Brand</dt>
+          <dd class="col-8">{{ p.brand }}</dd>
+          }
+          <dt class="col-4 text-secondary fw-normal">Stock</dt>
+          <dd class="col-8" [class.text-success]="p.stock > 0" [class.text-danger]="p.stock === 0">
+            {{ p.stock > 0 ? p.stock + ' in stock' : 'Out of stock' }}
+          </dd>
+          <dt class="col-4 text-secondary fw-normal">Category</dt>
+          <dd class="col-8">{{ p.category }}</dd>
+        </dl>
+
+        <button type="button" class="btn" [class.btn-outline-danger]="true" (click)="favorites.toggle(p)">
+          {{ favorites.isFavorite(p.id) ? '♥ Saved to favorites' : '♡ Add to favorites' }}
+        </button>
+      </div>
+    </div>
+  </div>
+  }
+</div>

@@ -1,0 +1,64 @@
+<div class="container py-3">
+  <div class="row g-2 mb-3">
+    <div class="col-12 col-md">
+      <app-search-bar [value]="query()" (searchChange)="onSearch($event)" />
+    </div>
+    <div class="col col-md-auto">
+      <app-category-filter
+        [categories]="categories()"
+        [value]="category()"
+        (categoryChange)="onCategoryChange($event)"
+      />
+    </div>
+    <div class="col-auto">
+      <app-favorites-only-button
+        [active]="favoritesOnly()"
+        (toggle)="onFavoritesOnlyToggle()"
+      />
+    </div>
+  </div>
+
+  @if (status() === 'loading') {
+    <div class="row row-cols-2 row-cols-md-4 g-3">
+      @for (i of skeletons; track i) {
+        <div class="col">
+          <app-product-card-skeleton />
+        </div>
+      }
+    </div>
+  } @else if (status() === 'error') {
+    <app-state-message
+      title="Could not load products"
+      message="Check your connection and try again."
+      buttonLabel="Try again"
+      (action)="retry()"
+    />
+  } @else if (products().length === 0) {
+    <app-state-message
+      icon="🔍"
+      title="No products found"
+      [message]="emptyMessage()"
+      [buttonLabel]="emptyButton()"
+      [outline]="true"
+      (action)="onClearFilters()"
+    />
+  } @else {
+    <div class="row row-cols-2 row-cols-md-4 g-3">
+      @for (p of products(); track p.id) {
+        <div class="col">
+          <app-product-card
+            [product]="p"
+            [isFavorite]="favorites.isFavorite(p.id)"
+            (favoriteToggle)="favorites.toggle($event)"
+          />
+        </div>
+      }
+    </div>
+
+    <app-pagination
+      [page]="page()"
+      [totalPages]="totalPages()"
+      (pageChange)="onPageChange($event)"
+    />
+  }
+</div>
