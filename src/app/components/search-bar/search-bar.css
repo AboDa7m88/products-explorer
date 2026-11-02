@@ -1,0 +1,4 @@
+.search-bar:hover {
+  border-color: var(--primary);
+  box-shadow: 0 4px 12px var(--hover-primary-shadow);
+}

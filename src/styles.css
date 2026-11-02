@@ -1,7 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+/*Bootstrap colors that I use */
+:root {
+  --primary: #3b5bdb;
+  --primary-dark: #2b3a8f;
+  --hover-primary-shadow: rgba(59, 91, 219, 0.25);
+  --primary-soft: #e8f0ff;
+  --heart: #e11d48;
+  --heart-soft: #fdecec;
+  --star: #f59f00;
+  --success: #2b8a3e;
+  --danger: #e03131;
+  --bg: #f5f6f8;
+  --surface: #ffffff;
+  --thumb-bg: #f1f3f9;
+  --border: #e3e5ea;
+  --border-soft: #eceef2;
+  --text: #1f2430;
+  --muted: #6b7280;
+}
+
+
 body {
   font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  background: #f5f6f8;
+  background: var(--bg);
 }
 
 

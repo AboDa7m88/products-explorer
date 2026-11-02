@@ -1,4 +1,4 @@
-<select class="form-select" (change)="onChange($event)">
+<select class="form-select category-filter" (change)="onChange($event)">
   <option value="" [selected]="value === ''">All categories</option>
   @for (c of categories; track c.slug) {
     <option [value]="c.slug" [selected]="c.slug === value">{{ c.name }}</option>
