@@ -1,0 +1,169 @@
+:host {
+  display: block;
+  min-height: 100vh;
+}
+
+/* Main Container */
+.not-found-container {
+  min-height: 100vh;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+/* Error Card */
+.error-card {
+  width: 100%;
+  max-width: 700px;
+  min-height: 400px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 16px;
+  gap: 20px;
+  box-shadow: 0 8px 30px rgba(31, 36, 48, 0.06);
+}
+
+.error-card h2 {
+  color: var(--text);
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+/* 404 Illustration */
+.error-illustration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.number {
+  font-size: clamp(90px, 25vw, 170px);
+  font-weight: 900;
+  line-height: 1;
+  color: var(--primary-soft);
+}
+
+/* Face */
+.face {
+  width: 105px;
+  height: 125px;
+  background: var(--primary-soft);
+  border: 2px solid var(--border-soft);
+  border-radius: 50%;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.eyes {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 35px;
+  left: -5px;
+  right: -5px;
+}
+
+/* Eyes & Animations */
+.eyes span {
+  width: 40px;
+  height: 40px;
+  background: var(--surface);
+  border: 2px solid var(--text);
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  transform-origin: center;
+  animation: blink 2s infinite;
+}
+
+.eyes span::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: var(--text);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: look-around 3s ease-in-out infinite;
+}
+
+.nose {
+  width: 9px;
+  height: 12px;
+  border: 1px solid var(--heart);
+  border-radius: 50%;
+  position: absolute;
+  top: 57px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.mouth {
+  width: 60px;
+  height: 35px;
+  background: var(--text);
+  border-radius: 50% 50% 45% 45%;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Home Link */
+.home-link {
+  color: var(--primary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid var(--primary);
+  padding-bottom: 3px;
+  transition: all 0.2s ease;
+}
+
+.home-link:hover {
+  color: var(--primary-dark);
+  border-color: var(--primary-dark);
+}
+
+/* Tablet & Desktop */
+@media (min-width: 768px) {
+  .error-card {
+    min-height: 450px;
+  }
+}
+
+/* Keyframes */
+@keyframes blink {
+  0%, 45%, 48%, 100% {
+    transform: scaleY(1);
+  }
+  46%, 47% {
+    transform: scaleY(0.1);
+  }
+}
+
+@keyframes look-around {
+  0%, 100% {
+    transform: translate(-50%, -50%);
+  }
+  25% {
+    transform: translate(20%, -50%);
+  }
+  50% {
+    transform: translate(-120%, -50%);
+  }
+  75% {
+    transform: translate(-50%, -50%);
+  }
+}
