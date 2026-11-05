@@ -1,0 +1,50 @@
+.pagination-previous {
+  color: var(--pe-brand);
+  background: var(--pe-card-bg);
+  border: 1px solid var(--pe-border);
+}
+
+.pagination-previous:hover:not(:disabled) {
+  color: var(--pe-brand-hover);
+  background: var(--pe-brand-tint);
+  border-color: var(--pe-brand);
+}
+
+.pagination-previous:disabled {
+  color: var(--pe-text-muted);
+  background: var(--pe-page-bg);
+  border-color: var(--pe-border-subtle);
+  opacity: 0.65;
+}
+
+.pagination-previous:focus-visible,
+.btn-primary:focus-visible {
+  box-shadow: 0 0 0 0.2rem rgb(91 58 140 / 18%);
+}
+
+.pagination-label {
+  color: var(--pe-text-muted);
+}
+
+.pagination-next {
+  color: #fff;
+  background-color: var(--pe-brand);
+  border: 1px solid var(--pe-brand);
+}
+
+.pagination-next:hover:not(:disabled) {
+  color: #fff;
+  background-color: var(--pe-brand-hover);
+  border-color: var(--pe-brand-hover);
+}
+
+.pagination-next:focus-visible {
+  box-shadow: 0 0 0 0.2rem rgb(91 58 140 / 20%);
+}
+
+.pagination-next:disabled {
+  color: #fff;
+  background-color: var(--pe-brand);
+  border-color: var(--pe-brand);
+  opacity: 0.55;
+}

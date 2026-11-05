@@ -2,9 +2,9 @@
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  border: 1px solid #e3e5ea;
-  background: #fff;
-  color: #6b7280;
+  border: 1px solid var(--pe-border);
+  background:  var(--pe-page-bg);
+  color: var(--pe-brand);
   font-size: 1rem;
   line-height: 1;
   display: flex;

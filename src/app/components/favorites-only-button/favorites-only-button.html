@@ -2,7 +2,7 @@
   type="button"
   class="btn w-100"
   [class.btn-danger]="active"
-  [class.btn-outline-secondary]="!active"
+  [class.favorites-filter-idle]="!active"
   (click)="toggle.emit()"
 >
   {{ active ? '♥' : '♡' }}

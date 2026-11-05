@@ -1,0 +1,15 @@
+.favorites-filter-idle {
+  color: var(--pe-brand);
+  background: var(--pe-card-bg);
+  border: 1px solid var(--pe-border);
+}
+
+.favorites-filter-idle:hover {
+  color: var(--pe-brand-hover);
+  background: var(--pe-brand-tint);
+  border-color: var(--pe-brand);
+}
+
+.favorites-filter-idle:focus-visible {
+  box-shadow: 0 0 0 0.2rem rgb(91 58 140 / 15%);
+}

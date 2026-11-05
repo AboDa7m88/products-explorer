@@ -9,6 +9,12 @@
   padding: 0.5rem 0.9rem;
 }
 
+.navbar-brand{
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--pe-brand);
+  text-decoration: none;
+}
 
 .brand-logo {
   height: 48px;

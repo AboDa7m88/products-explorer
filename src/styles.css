@@ -22,9 +22,33 @@
 }
 
 
+/* Logo colors */
+:root {
+  --pe-brand: #5b3a8c;
+  --pe-brand-hover: #3b1e4b;
+  --pe-brand-tint: #efe9f6;
+
+  --pe-favorite: #e11d48;
+  --pe-favorite-tint: #fdecec;
+  --pe-rating: #ff9f1c;
+
+  --pe-positive: #2b8a3e;
+  --pe-negative: #e03131;
+
+  --pe-page-bg: #f7f5fa;
+  --pe-card-bg: #ffffff;
+  --pe-image-bg: #efe9f6;
+
+  --pe-border: #d9d4df;
+  --pe-border-subtle: #e6e1ec;
+
+  --pe-text: #1f1530;
+  --pe-text-muted: #6b6478;
+}
+
 body {
   font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  background: var(--bg);
+  background: var(--pe-page-bg);
 }
 
 

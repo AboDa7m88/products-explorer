@@ -3,10 +3,10 @@
   align-items: center;
   gap: 8px;
   padding: 8px 16px;
-  background: #fff;
-  border: 1px solid #e3e5ea;
+  background: var(--pe-card-bg);
+  border: 1px solid var(--pe-border);
   border-radius: 999px;
-  color: #3b5bdb;
+  color: var(--pe-brand);
   font-size: 0.85rem;
   font-weight: 600;
   text-decoration: none;
@@ -23,10 +23,10 @@
 }
 
 .back-link:hover {
-  background: #3b5bdb;
-  border-color: #3b5bdb;
+  background: var(--pe-brand);
+  border-color: var(--pe-brand);
   color: #fff;
-  box-shadow: 0 4px 12px rgba(59, 91, 219, 0.25);
+  box-shadow: 0 4px 12px rgb(91 58 140 / 25%);
 }
 
 .back-link:hover .arrow {
