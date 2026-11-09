@@ -7,6 +7,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrl: './favorites-only-button.css',
 })
 export class FavoritesOnlyButton {
+  @Input() count = 0;
   @Input() active = false;
   @Output() toggle = new EventEmitter<void>();
 }

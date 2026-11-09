@@ -1,17 +1,14 @@
 <nav class="navbar bg-white border-bottom px-3 px-md-4">
-  <div class="app-brand d-flex align-items-center gap-2">
-    <img src="logo.png" alt="" class="brand-logo">
-    <a class="navbar-brand fw-bold m-0" routerLink="/">
-      Product Explorer
-    </a>
-  </div>
+
+  <img src="logo3.png" alt="company logo" class="brand-logo">
 
   <div class="d-flex align-items-center gap-3">
     <a class="nav-link d-none d-sm-block small" routerLink="/" routerLinkActive="fw-bold"
       [routerLinkActiveOptions]="{ exact: true }">Products</a>
 
-    <span class="badge rounded-pill text-danger favorites-badge">
-      ❤️ <span class="d-none d-sm-inline">Favorites </span>({{ favoritesCount }})
-    </span>
+    <app-favorites-only-button
+     [active]="favoritesOnly()"
+     [count]="favoritesCount"
+     (toggle)="onFavoritesToggle()" />
   </div>
 </nav>

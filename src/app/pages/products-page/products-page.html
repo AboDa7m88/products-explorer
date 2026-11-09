@@ -10,12 +10,6 @@
         (categoryChange)="onCategoryChange($event)"
       />
     </div>
-    <div class="col-auto">
-      <app-favorites-only-button
-        [active]="favoritesOnly()"
-        (toggle)="onFavoritesOnlyToggle()"
-      />
-    </div>
   </div>
 
   @if (status() === 'loading') {

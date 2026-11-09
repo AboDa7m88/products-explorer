@@ -46,6 +46,27 @@
   --pe-text-muted: #6b6478;
 }
 
+/* New logo colors */
+:root {
+  /* Brand Colors */
+  --color-primary: #E03B13;
+  --color-primary-hover: #C4300E;
+
+  --color-dark: #0D0D0D;
+  --color-dark-hover: #262626;
+
+  --color-secondary: #C5E8E5;
+  --color-secondary-hover: #B2DDD9;
+
+  --color-bg: #FFFFFF;
+  --color-bg-hover: #F8F9FA;
+
+  /* Shadows */
+  --shadow-primary-hover: 0 8px 20px rgba(224, 59, 19, 0.35);
+  --shadow-dark-hover: 0 8px 20px rgba(13, 13, 13, 0.25);
+  --shadow-soft-hover: 0 10px 25px rgba(197, 232, 229, 0.45);
+}
+
 body {
   font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
   background: var(--pe-page-bg);
