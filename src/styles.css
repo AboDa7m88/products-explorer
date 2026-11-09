@@ -67,6 +67,30 @@
   --shadow-soft-hover: 0 10px 25px rgba(197, 232, 229, 0.45);
 }
 
+/* the last logo colors */
+
+:root {
+  --color-blue: #00A3FF;
+  --color-blue-hover: #008CE6;
+
+  --color-purple: #D900FF;
+  --color-purple-hover: #C200E6;
+
+  --color-indigo: #3B35EE;
+  --color-indigo-hover: #2D28D4;
+
+  --color-bg: #0A0A12;
+  --color-surface: #151522;
+
+  /* Neon & Glow Shadows */
+  --shadow-blue-hover: 0 4px 12px rgba(0, 163, 255, 0.25);
+  --shadow-purple-hover: 0 4px 12px rgba(217, 0, 255, 0.25);
+  --shadow-card-hover: 0 10px 30px rgba(59, 53, 238, 0.3);
+}
+
+
+
+
 body {
   font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
   background: var(--pe-page-bg);
@@ -78,6 +102,7 @@ body {
     opacity: 0;
     transform: translateY(12px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
