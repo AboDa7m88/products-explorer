@@ -1,4 +1,4 @@
-import { CurrencyPipe } from '@angular/common';
+import { CurrencyPipe, DecimalPipe } from '@angular/common';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit, inject, signal } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
@@ -9,9 +9,10 @@ import { FavoritesService } from '../../services/favorites.service';
 import { ProductsService } from '../../services/products.service';
 import {BackLink} from "../../components/back-link/back-link";
 
+
 @Component({
   selector: 'app-product-details-page',
-  imports: [CurrencyPipe, RouterLink, ProductGallery, BackLink],
+  imports: [CurrencyPipe, DecimalPipe, RouterLink, ProductGallery, BackLink],
   templateUrl: './product-details-page.html',
   styleUrl: './product-details-page.css',
 })

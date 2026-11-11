@@ -16,9 +16,24 @@
         <h1 class="h3 fw-bold">{{ p.title }}</h1>
         <div class="text-warning">★ <span class="text-dark small">{{ p.rating }}</span></div>
 
-        <div class="d-flex align-items-center gap-2 my-2">
-          <span class="fs-3 fw-bold text-primary">{{ p.price | currency: 'USD' : 'symbol' : '1.0-2' }}</span>
-          <span class="badge text-bg-success-subtle text-success">-{{ p.discountPercentage }}%</span>
+        <div class="d-flex align-items-baseline gap-2 my-3">
+          @if (p.discountPercentage > 0) {
+          <span class="fs-2 fw-bold text-primary">
+            {{ p.price * (1 - p.discountPercentage / 100) | currency:'USD':'symbol':'1.0-2' }}
+          </span>
+
+          <span class="fs-6 text-secondary text-decoration-line-through">
+            {{ p.price | currency:'USD':'symbol':'1.0-2' }}
+          </span>
+
+          <span class="badge text-bg-success-subtle text-success">
+            -{{ p.discountPercentage | number:'1.0-0' }}%
+          </span>
+          } @else {
+          <span class="fs-2 fw-bold text-primary">
+            {{ p.price | currency:'USD':'symbol':'1.0-2' }}
+          </span>
+          }
         </div>
 
         <p class="text-secondary">{{ p.description }}</p>

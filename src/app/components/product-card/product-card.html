@@ -7,7 +7,14 @@
     <div class="p-2">
       <h3 class="title">{{ product.title }}</h3>
       <div class="d-flex justify-content-between align-items-center">
-        <span class="price">{{ product.price | currency: 'USD' : 'symbol' : '1.0-2' }}</span>
+        <div class="d-flex align-items-baseline gap-2">
+          @if (hasDiscount) {
+          <span class="price">{{ discountedPrice | currency: 'USD' : 'symbol' : '1.0-2' }}</span>
+          <span class="price-old">{{ product.price | currency: 'USD' : 'symbol' : '1.0-2' }}</span>
+          } @else {
+          <span class="price">{{ product.price | currency: 'USD' : 'symbol' : '1.0-2' }}</span>
+          }
+        </div>
         <span class="rating">★ {{ product.rating }}</span>
       </div>
     </div>

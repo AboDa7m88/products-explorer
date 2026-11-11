@@ -36,6 +36,13 @@
 .price {
   color: var(--color-blue);
   font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.price-old {
+  color: #9aa0a6;
+  font-size: 0.75rem;
+  text-decoration: line-through;
 }
 
 .rating {
