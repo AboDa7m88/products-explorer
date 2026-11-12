@@ -1,0 +1,83 @@
+:host {
+  display: block;
+  animation: page-in 0.35s ease-out;
+}
+
+.cart-thumb {
+  width: 96px;
+  height: 96px;
+  flex-shrink: 0;
+  background: #f1f3f9;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.min-w-0 {
+  min-width: 0;
+}
+
+.price-new {
+  color: var(--color-blue);
+}
+
+.price-old {
+  color: #9aa0b4;
+}
+
+.qty-btn {
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--color-indigo);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--color-indigo);
+  font-size: 1.1rem;
+  line-height: 1;
+  transition: all 0.2s ease;
+}
+
+.qty-btn:hover:not(:disabled) {
+  background: var(--color-indigo);
+  color: #fff;
+}
+
+.qty-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.qty-value {
+  min-width: 28px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.cart-btn {
+  min-height: 44px;
+  background: var(--color-blue);
+  border: 1px solid var(--color-blue);
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.cart-btn:hover {
+  background: var(--color-blue-hover);
+  border-color: var(--color-blue-hover);
+  color: #fff;
+  box-shadow: var(--shadow-blue-hover);
+}
+
+.summary {
+  position: sticky;
+  top: 80px;
+}

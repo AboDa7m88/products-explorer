@@ -3,3 +3,44 @@
   animation: page-in 0.35s ease-out;
 }
 
+.product-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.product-actions app-add-to-cart {
+  flex: 1;
+  min-width: 0;
+}
+
+.favorite-btn {
+  white-space: nowrap;
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .product-actions {
+    gap: 10px;
+  }
+
+  .favorite-btn {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .favorite-icon {
+    font-size: 23px;
+    line-height: 1;
+  }
+
+  .favorite-text {
+    display: none;
+  }
+}

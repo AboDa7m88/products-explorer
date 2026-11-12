@@ -1,0 +1,29 @@
+:host {
+  display: inline-block;
+}
+
+.cart-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.5rem 0.9rem;
+  border: 1px solid var(--pe-border);
+  border-radius: 6px;
+  background: var(--pe-page-bg);
+  color: var(--pe-brand);
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cart-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.cart-link:hover,
+.cart-link.active {
+  border-color: var(--pe-brand);
+}

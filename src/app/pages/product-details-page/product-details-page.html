@@ -51,9 +51,22 @@
           <dd class="col-8">{{ p.category }}</dd>
         </dl>
 
-        <button type="button" class="btn" [class.btn-outline-danger]="true" (click)="favorites.toggle(p)">
-          {{ favorites.isFavorite(p.id) ? '♥ Saved to favorites' : '♡ Add to favorites' }}
-        </button>
+        <div class="product-actions">
+          <app-add-to-cart [product]="p" />
+
+          <button type="button" class="btn btn-outline-danger favorite-btn"
+            [class.is-favorite]="favorites.isFavorite(p.id)" (click)="favorites.toggle(p)" [attr.aria-label]="favorites.isFavorite(p.id)
+      ? 'Remove from favorites'
+      : 'Add to favorites'">
+            <span class="favorite-icon">
+              {{ favorites.isFavorite(p.id) ? '♥' : '♡' }}
+            </span>
+
+            <span class="favorite-text">
+              {{ favorites.isFavorite(p.id) ? 'Saved to favorites' : 'Add to favorites' }}
+            </span>
+          </button>
+        </div>
       </div>
     </div>
   </div>

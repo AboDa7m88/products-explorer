@@ -1,0 +1,120 @@
+.add-cart-btn {
+  min-height: 48px;
+  border: 1px solid var(--color-blue);
+  border-radius: 10px;
+  background: var(--color-blue);
+  color: #fff;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.add-cart-btn:hover:not(:disabled) {
+  background: var(--color-blue-hover);
+  border-color: var(--color-blue-hover);
+  color: #fff;
+  box-shadow: var(--shadow-blue-hover);
+  transform: translateY(-2px);
+}
+
+.add-cart-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.qty-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 10, 18, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1050;
+  padding: 16px;
+}
+
+.qty-box {
+  background: var(--color-surface);
+  color: #fff;
+  border: 1px solid var(--color-indigo);
+  border-radius: 14px;
+  padding: 20px;
+  width: 100%;
+  max-width: 320px;
+  text-align: center;
+  box-shadow: var(--shadow-card-hover);
+}
+
+.qty-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 4px;
+}
+
+.qty-label {
+  color: #9aa0b4;
+  font-size: 0.85rem;
+  margin-bottom: 14px;
+}
+
+.qty-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.qty-btn {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--color-indigo);
+  border-radius: 50%;
+  background: transparent;
+  color: #fff;
+  font-size: 1.3rem;
+  line-height: 1;
+  transition: all 0.2s ease;
+}
+
+.qty-btn:hover:not(:disabled) {
+  background: var(--color-indigo);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.qty-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.qty-value {
+  font-size: 1.4rem;
+  font-weight: 700;
+  min-width: 36px;
+  color: var(--color-blue);
+}
+
+.qty-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.qty-actions .btn {
+  flex: 1;
+}
+
+.qty-cancel {
+  border: 1px solid var(--color-indigo);
+  color: #fff;
+  background: transparent;
+}
+
+.qty-cancel:hover {
+  background: var(--color-indigo-hover);
+  border-color: var(--color-indigo-hover);
+  color: #fff;
+}
+
+.add-cart-btn.added {
+  background: var(--color-indigo);
+  border-color: var(--color-indigo);
+}

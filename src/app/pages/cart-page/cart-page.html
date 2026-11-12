@@ -1,0 +1,75 @@
+<div class="container py-3">
+  <h1 class="h3 fw-bold mb-3">Shopping Cart</h1>
+
+  @if (cart.items().length === 0) {
+  <div class="card border-0 shadow-sm p-5 text-center">
+    <p class="text-secondary mb-3">Your cart is empty</p>
+    <a routerLink="/" class="btn cart-btn mx-auto">Continue shopping</a>
+  </div>
+  } @else {
+  <div class="row g-3">
+    <div class="col-12 col-lg-8">
+      @for (item of cart.items(); track item.product.id) {
+      <div class="card border-0 shadow-sm p-3 mb-3">
+        <div class="d-flex gap-3">
+          <a [routerLink]="['/products', item.product.id]" class="cart-thumb">
+            <img [src]="item.product.thumbnail" [alt]="item.product.title" />
+          </a>
+
+          <div class="flex-grow-1 min-w-0">
+            <a [routerLink]="['/products', item.product.id]" class="text-decoration-none text-reset">
+              <h2 class="h6 fw-bold mb-1">{{ item.product.title }}</h2>
+            </a>
+
+            <div class="d-flex align-items-baseline gap-2 mb-2">
+              <span class="fw-bold price-new">
+                {{ cart.discountedPrice(item.product) | currency:'USD':'symbol':'1.0-2' }}
+              </span>
+              @if (item.product.discountPercentage > 0) {
+              <span class="small text-decoration-line-through price-old">
+                {{ item.product.price | currency:'USD':'symbol':'1.0-2' }}
+              </span>
+              }
+            </div>
+
+            <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+              <div class="d-flex align-items-center gap-2">
+                <button type="button" class="qty-btn" (click)="cart.decreaseQuantity(item.product.id)">−</button>
+                <span class="qty-value">{{ item.quantity }}</span>
+                <button type="button" class="qty-btn" (click)="cart.increaseQuantity(item.product.id)"
+                  [disabled]="item.quantity >= item.product.stock">+</button>
+              </div>
+
+              <div class="d-flex align-items-center gap-3">
+                <span class="fw-bold">{{ cart.itemSubtotal(item) | currency:'USD':'symbol':'1.0-2' }}</span>
+                <button type="button" class="btn btn-sm btn-outline-danger"
+                  (click)="cart.removeFromCart(item.product.id)">Remove</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+
+    <div class="col-12 col-lg-4">
+      <div class="card border-0 shadow-sm p-3 summary">
+        <h2 class="h5 fw-bold mb-3">Order summary</h2>
+
+        <div class="d-flex justify-content-between mb-2">
+          <span class="text-secondary">Items</span>
+          <span>{{ cart.totalItems() }}</span>
+        </div>
+
+        <div class="d-flex justify-content-between fs-5 fw-bold mb-3">
+          <span>Total</span>
+          <span class="price-new">{{ cart.subtotal() | currency:'USD':'symbol':'1.0-2' }}</span>
+        </div>
+
+        <button type="button" class="btn cart-btn w-100 mb-2">Checkout</button>
+        <button type="button" class="btn btn-outline-danger w-100" (click)="cart.clearCart()">Clear cart</button>
+      </div>
+    </div>
+  </div>
+  }
+</div>

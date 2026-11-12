@@ -6,9 +6,7 @@
     <a class="nav-link d-none d-sm-block small" routerLink="/" routerLinkActive="fw-bold"
       [routerLinkActiveOptions]="{ exact: true }">Products</a>
 
-    <app-favorites-only-button
-     [active]="favoritesOnly()"
-     [count]="favoritesCount"
-     (toggle)="onFavoritesToggle()" />
+    <app-favorites-only-button [active]="favoritesOnly()" [count]="favoritesCount" (toggle)="onFavoritesToggle()" />
+    <app-cart-button />
   </div>
 </nav>

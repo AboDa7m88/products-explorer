@@ -8,11 +8,14 @@ import { Product } from '../../models/product';
 import { FavoritesService } from '../../services/favorites.service';
 import { ProductsService } from '../../services/products.service';
 import {BackLink} from "../../components/back-link/back-link";
+import { AddToCart } from '../../components/add-to-cart/add-to-cart';
+
+
 
 
 @Component({
   selector: 'app-product-details-page',
-  imports: [CurrencyPipe, DecimalPipe, RouterLink, ProductGallery, BackLink],
+  imports: [CurrencyPipe, DecimalPipe, ProductGallery, BackLink, AddToCart],
   templateUrl: './product-details-page.html',
   styleUrl: './product-details-page.css',
 })
