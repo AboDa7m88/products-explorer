@@ -1,4 +1,4 @@
-<a routerLink="/" class="back-link">
-    <span class="arrow">←</span>
-    Back to products
-  </a>
+<button type="button" class="back-link" (click)="goBack()">
+  <span class="arrow">←</span>
+  {{ label }}
+</button>

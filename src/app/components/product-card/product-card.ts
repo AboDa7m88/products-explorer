@@ -13,11 +13,13 @@ import { FavoriteButton } from '../favorite-button/favorite-button';
 export class ProductCard {
   @Input({ required: true }) product!: Product;
   @Input() isFavorite = false;
+  @Input() showRating = true;
   @Output() favoriteToggle = new EventEmitter<Product>();
 
   get hasDiscount(): boolean {
     return this.product.discountPercentage > 0;
   }
+
   get discountedPrice(): number {
     return this.product.price * (1 - this.product.discountPercentage / 100);
   }

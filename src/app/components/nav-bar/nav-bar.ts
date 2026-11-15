@@ -1,10 +1,15 @@
 import { Component, Input, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { ActivatedRoute, Router, RouterLink, RouterLinkActive } from '@angular/router';
-import { map } from 'rxjs';
+import {
+  ActivatedRoute,
+  NavigationEnd,
+  Router,
+  RouterLink,
+  RouterLinkActive,
+} from '@angular/router';
+import { filter, map } from 'rxjs';
+import { CartButton } from '../cart-button/cart-button';
 import { FavoritesOnlyButton } from '../favorites-only-button/favorites-only-button';
-import { CartService } from '../../services/cart.service';
-import{ CartButton } from '../cart-button/cart-button';
 
 @Component({
   selector: 'app-nav-bar',
@@ -17,15 +22,22 @@ export class NavBar {
 
   private route = inject(ActivatedRoute);
   private router = inject(Router);
-  cart = inject(CartService);
 
   favoritesOnly = toSignal(
     this.route.queryParamMap.pipe(map((params) => params.get('favorites') === '1')),
     { initialValue: false },
   );
 
+  isHome = toSignal(
+    this.router.events.pipe(
+      filter((event): event is NavigationEnd => event instanceof NavigationEnd),
+      map((event) => event.urlAfterRedirects.split('?')[0] === '/'),
+    ),
+    { initialValue: this.router.url.split('?')[0] === '/' },
+  );
+
   onFavoritesToggle() {
-    this.router.navigate(['/'], {
+    this.router.navigate(['/products'], {
       queryParams: { favorites: this.favoritesOnly() ? null : '1' },
     });
   }

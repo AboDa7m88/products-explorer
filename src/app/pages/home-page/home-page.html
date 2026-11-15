@@ -1,0 +1,14 @@
+<app-hero />
+
+<div class="container pb-4">
+  <div class="categories-row d-flex flex-nowrap gap-2 overflow-auto pb-2 mb-4">
+    @for (c of categories(); track c.slug) {
+    <a [routerLink]="['/products']" [queryParams]="{ category: c.slug }"
+      class="btn btn-sm rounded-pill text-nowrap category-chip">{{ c.name }}</a>
+    }
+  </div>
+
+  @if (deals().length) {
+  <app-product-marquee heading="Hot Deals" [products]="deals()" />
+  }
+</div>

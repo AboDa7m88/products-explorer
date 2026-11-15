@@ -1,0 +1,35 @@
+:host {
+  display: block;
+}
+
+@media (min-width: 768px) and (min-height: 600px) {
+  :host {
+    height: 100vh;
+    overflow: hidden;
+  }
+}
+
+.categories-row {
+  scrollbar-width: none;
+}
+
+.categories-row::-webkit-scrollbar {
+  display: none;
+}
+
+.category-chip {
+  --bs-btn-color: var(--color-indigo);
+  --bs-btn-bg: #fff;
+  --bs-btn-border-color: #dee2e6;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--color-indigo);
+  --bs-btn-hover-border-color: var(--color-indigo);
+  --bs-btn-active-bg: var(--color-indigo-hover);
+  --bs-btn-active-border-color: var(--color-indigo-hover);
+  transition: all 0.25s ease;
+}
+
+.category-chip:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card-hover);
+}

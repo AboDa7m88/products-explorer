@@ -12,19 +12,19 @@ export class ProductsService {
 
   getProducts(page: number): Observable<ProductsResponse> {
     return this.http.get<ProductsResponse>(
-      `${BASE_URL}/products?limit=${PAGE_SIZE}&skip=${this.skip(page)}`
+      `${BASE_URL}/products?limit=${PAGE_SIZE}&skip=${this.skip(page)}`,
     );
   }
 
   searchProducts(query: string, page: number): Observable<ProductsResponse> {
     return this.http.get<ProductsResponse>(
-      `${BASE_URL}/products/search?q=${encodeURIComponent(query)}&limit=${PAGE_SIZE}&skip=${this.skip(page)}`
+      `${BASE_URL}/products/search?q=${encodeURIComponent(query)}&limit=${PAGE_SIZE}&skip=${this.skip(page)}`,
     );
   }
 
   getProductsByCategory(slug: string, page: number): Observable<ProductsResponse> {
     return this.http.get<ProductsResponse>(
-      `${BASE_URL}/products/category/${slug}?limit=${PAGE_SIZE}&skip=${this.skip(page)}`
+      `${BASE_URL}/products/category/${slug}?limit=${PAGE_SIZE}&skip=${this.skip(page)}`,
     );
   }
 
@@ -34,6 +34,12 @@ export class ProductsService {
 
   getProduct(id: number): Observable<Product> {
     return this.http.get<Product>(`${BASE_URL}/products/${id}`);
+  }
+
+  getTopDeals(limit: number): Observable<ProductsResponse> {
+    return this.http.get<ProductsResponse>(
+      `${BASE_URL}/products?sortBy=discountPercentage&order=desc&limit=${limit}`,
+    );
   }
 
   private skip(page: number): number {
