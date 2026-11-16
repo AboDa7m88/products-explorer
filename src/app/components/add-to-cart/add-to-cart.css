@@ -21,10 +21,18 @@
   cursor: not-allowed;
 }
 
+.add-cart-btn.added {
+  background: var(--color-indigo);
+  border-color: var(--color-indigo);
+}
+
+/* ---------- Quantity dialog (light) ---------- */
+
 .qty-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(10, 10, 18, 0.75);
+  background: rgba(31, 21, 48, 0.35); /* soft tint instead of near-black */
+  backdrop-filter: blur(3px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,15 +41,15 @@
 }
 
 .qty-box {
-  background: var(--color-surface);
-  color: #fff;
-  border: 1px solid var(--color-indigo);
+  background: #fff;
+  color: var(--pe-text);
+  border: 1px solid var(--pe-border-subtle);
   border-radius: 14px;
   padding: 20px;
   width: 100%;
   max-width: 320px;
   text-align: center;
-  box-shadow: var(--shadow-card-hover);
+  box-shadow: 0 20px 50px rgba(59, 53, 238, 0.18); /* soft indigo shadow, no neon */
 }
 
 .qty-title {
@@ -51,7 +59,7 @@
 }
 
 .qty-label {
-  color: #9aa0b4;
+  color: var(--pe-text-muted);
   font-size: 0.85rem;
   margin-bottom: 14px;
 }
@@ -70,15 +78,14 @@
   border: 1px solid var(--color-indigo);
   border-radius: 50%;
   background: transparent;
-  color: #fff;
+  color: var(--color-indigo);
   font-size: 1.3rem;
   line-height: 1;
   transition: all 0.2s ease;
 }
 
 .qty-btn:hover:not(:disabled) {
-  background: var(--color-indigo);
-  box-shadow: var(--shadow-card-hover);
+  background: var(--indigo-soft, #edebff);
 }
 
 .qty-btn:disabled {
@@ -90,7 +97,7 @@
   font-size: 1.4rem;
   font-weight: 700;
   min-width: 36px;
-  color: var(--color-blue);
+  color: var(--color-indigo);
 }
 
 .qty-actions {
@@ -103,18 +110,13 @@
 }
 
 .qty-cancel {
-  border: 1px solid var(--color-indigo);
-  color: #fff;
-  background: transparent;
+  border: 1px solid var(--pe-border);
+  color: var(--pe-text-muted);
+  background: #fff;
 }
 
 .qty-cancel:hover {
-  background: var(--color-indigo-hover);
-  border-color: var(--color-indigo-hover);
-  color: #fff;
-}
-
-.add-cart-btn.added {
-  background: var(--color-indigo);
-  border-color: var(--color-indigo);
+  background: var(--pe-page-bg);
+  border-color: var(--pe-border);
+  color: var(--pe-text);
 }
