@@ -1,0 +1,66 @@
+:host {
+  display: block;
+  animation: page-in 0.35s ease-out;
+}
+
+.summary {
+  position: sticky;
+  top: 80px;
+}
+
+.min-w-0 {
+  min-width: 0;
+}
+
+.price-new {
+  color: var(--color-blue);
+}
+
+.thumb {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  background: var(--pe-image-bg);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.form-control:not(.is-invalid):focus {
+  border-color: var(--color-indigo);
+  box-shadow: 0 0 0 0.2rem rgba(59, 53, 238, 0.15);
+}
+
+.cod-note {
+  background: var(--indigo-soft, #edebff);
+  border: 1px solid var(--indigo-border, #d6d3fb);
+  border-radius: 10px;
+  color: var(--color-indigo);
+  padding: 10px 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.checkout-btn {
+  min-height: 46px;
+  background: var(--color-blue);
+  border: 1px solid var(--color-blue);
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.checkout-btn:hover {
+  background: var(--color-blue-hover);
+  border-color: var(--color-blue-hover);
+  color: #fff;
+  box-shadow: var(--shadow-blue-hover);
+}

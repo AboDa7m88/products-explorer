@@ -71,7 +71,7 @@
           <span class="price-new">{{ cart.subtotal() | currency:'USD':'symbol':'1.0-2' }}</span>
         </div>
 
-        <button type="button" class="btn cart-btn w-100 mb-2">Checkout</button>
+        <a routerLink="/checkout" class="btn cart-btn w-100 mb-2">Checkout</a>
         <button type="button" class="btn btn-outline-danger w-100" (click)="cart.clearCart()">Clear cart</button>
       </div>
     </div>

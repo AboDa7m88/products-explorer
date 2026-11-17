@@ -1,0 +1,118 @@
+<div class="container py-3">
+  <div class="mb-3">
+    <app-back-link />
+  </div>
+
+  <h1 class="h3 fw-bold mb-3">Checkout</h1>
+
+  <div class="row g-3">
+    <!-- Form -->
+    <div class="col-12 col-lg-7">
+      <form
+        class="card border-0 shadow-sm p-3"
+        [formGroup]="form"
+        (ngSubmit)="onSubmit()"
+        novalidate
+      >
+        <h2 class="h5 fw-bold mb-3">Delivery details</h2>
+
+        <div class="mb-3">
+          <label for="fullName" class="form-label">Full name</label>
+          <input
+            id="fullName"
+            type="text"
+            class="form-control"
+            formControlName="fullName"
+            autocomplete="name"
+            [class.is-invalid]="isInvalid('fullName')"
+          />
+          @if (isInvalid('fullName')) {
+            <div class="invalid-feedback">
+              @if (form.controls.fullName.hasError('required')) {
+                Full name is required.
+              } @else {
+                Enter at least 3 characters.
+              }
+            </div>
+          }
+        </div>
+
+        <div class="mb-3">
+          <label for="phone" class="form-label">Phone number</label>
+          <input
+            id="phone"
+            type="tel"
+            class="form-control"
+            formControlName="phone"
+            placeholder="01XXXXXXXXX"
+            autocomplete="tel"
+            [class.is-invalid]="isInvalid('phone')"
+          />
+          @if (isInvalid('phone')) {
+            <div class="invalid-feedback">
+              @if (form.controls.phone.hasError('required')) {
+                Phone number is required.
+              } @else {
+                Enter a valid 11-digit mobile number (e.g. 01012345678).
+              }
+            </div>
+          }
+        </div>
+
+        <div class="mb-3">
+          <label for="address" class="form-label">Address</label>
+          <textarea
+            id="address"
+            rows="3"
+            class="form-control"
+            formControlName="address"
+            autocomplete="street-address"
+            [class.is-invalid]="isInvalid('address')"
+          ></textarea>
+          @if (isInvalid('address')) {
+            <div class="invalid-feedback">
+              @if (form.controls.address.hasError('required')) {
+                Address is required.
+              } @else {
+                Please write the full address (at least 10 characters).
+              }
+            </div>
+          }
+        </div>
+
+        <div class="cod-note mb-3">Payment: Cash on delivery</div>
+
+        <button type="submit" class="btn checkout-btn w-100">Place order</button>
+      </form>
+    </div>
+
+    <!-- Order summary -->
+    <div class="col-12 col-lg-5">
+      <div class="card border-0 shadow-sm p-3 summary">
+        <h2 class="h5 fw-bold mb-3">Order summary</h2>
+
+        @for (item of cart.items(); track item.product.id) {
+          <div class="d-flex gap-2 align-items-center mb-3">
+            <div class="thumb">
+              <img [src]="item.product.thumbnail" [alt]="item.product.title" />
+            </div>
+            <div class="flex-grow-1 min-w-0">
+              <div class="small fw-semibold text-truncate">{{ item.product.title }}</div>
+              <div class="small text-secondary">Qty: {{ item.quantity }}</div>
+            </div>
+            <div class="fw-semibold">
+              {{ cart.itemSubtotal(item) | currency: 'USD' : 'symbol' : '1.0-2' }}
+            </div>
+          </div>
+        }
+
+        <hr />
+
+        <div class="d-flex justify-content-between fs-5 fw-bold">
+          <span>Total</span>
+          <span class="price-new">{{ cart.subtotal() | currency: 'USD' : 'symbol' : '1.0-2' }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

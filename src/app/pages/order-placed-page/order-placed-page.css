@@ -1,0 +1,52 @@
+:host {
+  display: block;
+  animation: page-in 0.35s ease-out;
+}
+
+.result-card {
+  max-width: 560px;
+}
+
+.success-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--blue-soft, #e5f6ff);
+  color: var(--color-blue);
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info-box {
+  background: var(--pe-page-bg);
+  border: 1px solid var(--pe-border-subtle);
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.order-id {
+  color: var(--color-indigo);
+}
+
+.price-new {
+  color: var(--color-blue);
+}
+
+.continue-btn {
+  min-height: 46px;
+  background: var(--color-blue);
+  border: 1px solid var(--color-blue);
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.continue-btn:hover {
+  background: var(--color-blue-hover);
+  border-color: var(--color-blue-hover);
+  color: #fff;
+  box-shadow: var(--shadow-blue-hover);
+}
